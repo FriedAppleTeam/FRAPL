@@ -1,0 +1,3 @@
+FrlGlobal['iTunes'] = {
+	handlers: {}
+};
