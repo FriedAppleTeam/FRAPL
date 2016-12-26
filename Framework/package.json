@@ -1,0 +1,23 @@
+{
+  "name": "FRAPL",
+  "version": "1.0.0",
+  "description": "This framework is created to simplify interaction with Frida and extend it with information from static disasemblers (like IDA Pro) using FridaLink.",
+  "keywords": [
+    "IDA",
+    "Frida",
+    "FRAPL",
+    "FridaLink"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FriedAppleTeam/FRAPL.git"
+  },
+  "license": "",
+  "dependencies": {
+    "colors": "git://github.com/Marak/colors.js.git#master",
+    "co": ">=1.0",
+    "uuid": ">=1.0",
+    "frida": ">=7.0.5",
+    "frida-load": ">=1.0"
+  }
+}

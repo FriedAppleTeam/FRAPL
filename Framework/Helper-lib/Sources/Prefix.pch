@@ -1,0 +1,16 @@
+
+#if defined(__APPLE__)
+#include "TargetConditionals.h"
+#if defined(TARGET_IPHONE_SIMULATOR) && (TARGET_IPHONE_SIMULATOR != 0)
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+# elif defined(TARGET_OS_IPHONE) && (TARGET_OS_IPHONE != 0)
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+# elif defined(TARGET_OS_MAC) && (TARGET_OS_MAC != 0)
+#import <Cocoa/Cocoa.h>
+#import <AppKit/AppKit.h>
+#else
+#  error Unknown Apple platform
+# endif
+#endif

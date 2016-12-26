@@ -26,10 +26,6 @@ This is a new way of combining static and dynamic analysis.
 
 ## Design and Structure
 
-### SOURCE CODE
-
-&nbsp;&nbsp;&nbsp;**COMING SOON (end of 2016)**
-
 ### FRAPL
 
 * __iOS/*__ - iOS specific FRAPL headers (classes, helpers, UI)
@@ -76,10 +72,19 @@ To install required nmp modules run following command in __FRAPL__ folder:
 
 ### FridaLink
 
-**FridaLink** setup is **as simple as 1-2-3** and requires just three steps to actually start reverse engineering your target. Without a single line of code.  
+**FridaLink** setup is **as simple as 1-2-3** and requires just three steps to attach to app and actually start reverse engineering your target. Without a single line of code.  
 
-1. In IDA press __ALT+F7__ and load __FridaLink.py__  
+1. In IDA press __ALT+F7__ and load __FridaLink.py__   
 2. In terminal run `$ ./create_project.sh -f ~/Projects/TargetApp ; cd ~/Projects/TargetApp` to create project  
 3. In terminal to attach to target and establish FridaLink run  
-`$ node ./client.js -l -n TargetApp server.js` for macOS target  
-`$ node ./client.js -l -r -p $(frida-ps -U | grep TargetApp | awk '{print $1}') ./server.js` for iOS target
+`$ node ./client.js -c theme.json -l -n TargetApp server.js` for macOS target  
+`$ node ./client.js -c theme.json -l -r -p $(frida-ps -U | grep TargetApp | awk '{print $1}') ./server.js` for iOS target
+
+## Setup connection to your iDevice over USB 
+
+* Get jailbroken device and serial cable
+* Install usbmuxd - `brew install usbmuxd`
+* Grab **usbmux.py** script [here](https://raw.githubusercontent.com/emonti/usbmux.py/master/usbmux.py)
+* Grab **tcprelay.py** script [here](https://raw.githubusercontent.com/emonti/usbmux.py/master/tcprelay.py)
+* Drop these files into your path someplace and make executable.
+* Now connect your device and run the following command. `tcprelay.py -t 22:4222`

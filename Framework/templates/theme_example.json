@@ -1,0 +1,12 @@
+{
+  "frapl": 			["green"],
+  "info":			["yellow"],
+  "error": 			["red"],
+  "file":			["blue", "bold"],
+  "include":		["yellow", "bold"],
+  "bt_graphic": 	["yellow", "bold"],
+  "bt_sym_idx": 	["gray"],
+  "bt_mod_name":	["red", "bold"],
+  "bt_sym_addr":	["yellow"],
+  "bt_sym_name": 	["blue", "bold"]
+}
